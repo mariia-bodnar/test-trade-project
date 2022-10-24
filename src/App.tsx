@@ -20,19 +20,18 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
   body{
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
     font-family: 'Mazzard';
     color: #ffff;
     margin: 0;
     padding: 0;
     background-color: var(--background-color) ;
   }
-   #root {
-    overflow: hidden;
-   }
   .wrapper {
     height: 100%;
     padding-bottom: 100px;
+    overflow-x: hidden;
     @media (max-width: 767px) {
      padding-bottom : 50px;
     }
