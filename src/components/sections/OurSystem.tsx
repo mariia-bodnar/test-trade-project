@@ -17,7 +17,7 @@ export const OurSystem = () => {
             Take advantage of time and sales, futures spread orders and depth
             trader — plus, trade directly from charts.
           </p>
-          <a className="gradientAccent" href="#">
+          <a className="gradientAccent" href="#learn-more">
             Learn more
           </a>
         </div>

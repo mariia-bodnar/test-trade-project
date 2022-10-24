@@ -12,7 +12,7 @@ export const DesktopHeader = () => {
            <li><a href="#">R&D</a></li>
            <li><a href="#">Community</a></li>
         </S.List>
-        <S.Button>
+        <S.Button href="#">
           Career
           <span></span>
         </S.Button>
@@ -50,7 +50,7 @@ const S = {
       width: 70%;
     }
   `,
-  Button: styled.div`
+  Button: styled.a`
     background: linear-gradient(140.6deg, #ffffff -27.18%, #dedede 126.06%);
     box-shadow: 0px 0px 49px rgba(42, 7, 254, 0.4);
     border-radius: 10px;
@@ -65,6 +65,9 @@ const S = {
     }
     @media (max-width: 1199px) {
       padding: 8px 22px;
+    }
+    :hover {
+      color: #000000;
     }
     & span {
       width: 14px;

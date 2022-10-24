@@ -1,9 +1,11 @@
+import { createContext } from "react";
 import { createGlobalStyle } from "styled-components";
 import { Banner } from "./components/banner/Banner";
 import { Menu } from "./components/menu/Menu";
 import { Content } from "./components/sections/Content";
+import { GlobalContextProvider } from "./context";
 
-const GlobalStyled = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   :root {
     --background-color: #000000;
     --accent-fill: #1556EE;
@@ -18,17 +20,19 @@ const GlobalStyled = createGlobalStyle`
     font-style: normal;
   }
   body{
+    /* scroll-behavior: smooth; */
     font-family: 'Mazzard';
     color: #ffff;
     margin: 0;
     padding: 0;
     background-color: var(--background-color) ;
   }
+   #root {
+    overflow: hidden;
+   }
   .wrapper {
     height: 100%;
     padding-bottom: 100px;
-    position: relative;
-    overflow: hidden;
     @media (max-width: 767px) {
      padding-bottom : 50px;
     }
@@ -152,19 +156,20 @@ const GlobalStyled = createGlobalStyle`
 `;
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
-    <div className="wrapper">
-      <div className="bg-1"></div>
-      <div className="bg-2"></div>
-      <GlobalStyled />
-      <Menu />
-      <main>
-        <Banner />
-        <Content />
-      </main>
-    </div>
+    <GlobalContextProvider>
+      <div className="wrapper">
+        <div className="bg-1"></div>
+        <div className="bg-2"></div>
+       
+        <GlobalStyle />
+        <Menu />
+        <main>
+          <Banner />
+          <Content />
+        </main>
+      </div>
+    </GlobalContextProvider>
   );
 }
 

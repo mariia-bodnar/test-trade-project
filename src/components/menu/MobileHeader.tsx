@@ -13,7 +13,7 @@ export const MobileHeader = () => {
   return (
     <>
       <S.MobileHeader className="container">
-        <S.Wrapper >
+        <S.Wrapper>
           <a className="fs-25" href="#">
             C
           </a>
@@ -23,26 +23,25 @@ export const MobileHeader = () => {
           </S.OpenMenuButton>
         </S.Wrapper>
 
-        {!initialLoad &&
-        <>
-        <S.BoxForAnimation $isActive={showMenu}/>
-         <S.List $isActive={showMenu}>
-          <li>
-            <a href="#">Activities</a>
-          </li>
-          <li>
-            <a href="#">Technology</a>
-          </li>
-          <li>
-            <a href="#">R&D</a>
-          </li>
-          <li>
-            <a href="#">Community</a>
-          </li>
-        </S.List>
-       
-        </>
-        }
+        {!initialLoad && (
+          <>
+            <S.BoxForAnimation $isActive={showMenu} />
+            <S.List $isActive={showMenu}>
+              <li>
+                <a href="#">Activities</a>
+              </li>
+              <li>
+                <a href="#">Technology</a>
+              </li>
+              <li>
+                <a href="#">R&D</a>
+              </li>
+              <li>
+                <a href="#">Community</a>
+              </li>
+            </S.List>
+          </>
+        )}
       </S.MobileHeader>
     </>
   );
@@ -56,31 +55,34 @@ const S = {
     }
   `,
   BoxForAnimation: styled.div<{ $isActive?: boolean }>`
-  ${(p) =>
-    p.$isActive
-      ? css`
-          animation: "toggleSlide" 0.6s;
-          transition: all 1s;
-          margin-bottom: 100px;
-        `
-      : css`
-          animation: "toggleUpSlide" 0.6s;
-          transition: all 1s;
-          margin-bottom: 0px;
-        `};
-  @keyframes toggleSlide {
-    100% {
-      margin-bottom: 100px;
+    ${(p) =>
+      p.$isActive
+        ? css`
+            animation: "toggleSlide" 0.6s;
+            transition: all 1s;
+            margin-bottom: 100px;
+          `
+        : css`
+            animation: "toggleUpSlide" 0.6s;
+            transition: all 1s;
+            margin-bottom: 0px;
+          `};
+    @keyframes toggleSlide {
+      0% {
+        margin-bottom: 0px;
+      }
+      100% {
+        margin-bottom: 100px;
+      }
     }
-  }
-  @keyframes toggleUpSlide {
-    0% {
-      margin-bottom: 100px;
+    @keyframes toggleUpSlide {
+      0% {
+        margin-bottom: 100px;
+      }
+      100% {
+        margin-bottom: 0px;
+      }
     }
-    100% {
-      margin-bottom: 0px;
-    }
-  }
   `,
   Wrapper: styled.div`
     display: flex;
@@ -186,7 +188,7 @@ const S = {
     gap: 12px;
     width: 90%;
     padding: 0;
-    transition: all 1s ease-in-out;
+    transition: all 0.2s ease-in-out;
     animation: "slideDown" 0.6s;
     transform: translateY(-90px);
     @keyframes slideDown {
