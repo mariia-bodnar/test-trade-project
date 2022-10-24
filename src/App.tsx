@@ -73,9 +73,9 @@ const GlobalStyle = createGlobalStyle`
   .container {
     max-width: 90%;
     margin: 0 auto;
-    @media (max-width: 576px) {
+    /* @media (max-width: 576px) {
       max-width: 94%;
-    }
+    } */
   }
   .blueButton {
     background: linear-gradient(140.6deg, #3E6FF9 -27.18%, #3E53F8 126.06%);
@@ -132,11 +132,14 @@ const GlobalStyle = createGlobalStyle`
   .bg-1, .bg-2,.bg-3,.bg-4,.bg-5,.bg-6 {
     z-index: -1;
     position: absolute;
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
   .bg-1 {
     width: 742px;
     height: 597px;
-    top: - 10%;
+    top: -10%;
     left: -186px;
     top: -170px;
     background: radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,0.09) 0%,rgba(196,196,196,0) 100%);
@@ -146,7 +149,6 @@ const GlobalStyle = createGlobalStyle`
     width: 923.19px;
     height: 580.96px;
     left: -17px;
-    bottom: 0;
     background: linear-gradient(0deg,rgba(87,87,87,0.23),rgba(87,87,87,0.23));
     filter: blur(100px);
     border-radius: 2.71815e7px;
@@ -160,7 +162,7 @@ function App() {
       <div className="wrapper">
         <div className="bg-1"></div>
         <div className="bg-2"></div>
-       
+
         <GlobalStyle />
         <Menu />
         <main>
