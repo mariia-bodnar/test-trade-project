@@ -186,7 +186,7 @@ const S = {
     gap: 12px;
     width: 90%;
     padding: 0;
-    transition: all 0.6s ease-in-out;
+    transition: all 1s ease-in-out;
     animation: "slideDown" 0.6s;
     transform: translateY(-90px);
     @keyframes slideDown {
