@@ -132,6 +132,9 @@ const GlobalStyle = createGlobalStyle`
   .bg-1, .bg-2,.bg-3,.bg-4,.bg-5,.bg-6 {
     z-index: -1;
     position: absolute;
+ 
+  }
+  .bg-1, .bg-2 {
     @media (max-width: 1000px) {
       display: none;
     }
