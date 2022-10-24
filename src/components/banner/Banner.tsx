@@ -1,8 +1,16 @@
 import styled from "styled-components";
 import imgFormulas from "../../assets/Pattern.svg";
 import imgCycle from "../../assets/Cycle.svg";
+import { useGlobalContext } from "../../context";
+import { useCallback } from "react";
 
 export const Banner = () => {
+  const { scrollToElementRef } = useGlobalContext();
+
+  const onLearnMoreClick = useCallback(() => {
+    scrollToElementRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [scrollToElementRef]);
+
   return (
     <S.Section>
       <S.BgImage src={imgFormulas} />
@@ -15,8 +23,8 @@ export const Banner = () => {
           Advanced crypto algorithmic trading and efficient <br />
           cross-chain execution, at scale.
         </p>
-        <S.Button className="blueButton">
-          learn more<span></span>
+        <S.Button className="blueButton" onClick={onLearnMoreClick}>
+          learn more <span></span>
         </S.Button>
       </S.Wrapper>
       <S.ImgWrapper>
@@ -142,7 +150,7 @@ const S = {
       }
     }
   `,
-  Button: styled.div`
+  Button: styled.a`
     margin: 5% auto;
     align-items: center;
     span {

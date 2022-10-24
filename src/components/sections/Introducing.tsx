@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import Image from "../../assets/Chart.svg";
+import { useGlobalContext } from "../../context";
 
 export const Introducing = () => {
+  const { scrollToElementRef } = useGlobalContext();
+
   return (
-    <S.Section>
+    <S.Section ref={scrollToElementRef}>
       <div className="container">
         <S.Sign />
         <S.Wrapper>
@@ -26,7 +29,9 @@ export const Introducing = () => {
                 executed.
               </p>
 
-              <span className="blueButton">Start now</span>
+              <a href="#" className="blueButton">
+                Start now
+              </a>
             </div>
           </S.Content>
         </S.Wrapper>
@@ -106,7 +111,7 @@ const S = {
       display: flex;
       max-width: 340px;
       line-height: 1.4;
-      color: #E9E9E9;
+      color: #e9e9e9;
       @media (max-width: 767px) {
         max-width: 100%;
       }
