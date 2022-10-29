@@ -132,6 +132,10 @@ const S = {
     }
     .blueButton {
       margin-top: 16px;
+      padding: 16px 54px !important;
+      @media (max-width: 920px) {
+        padding: 14px 46px !important;
+      }
     }
   `,
 };
