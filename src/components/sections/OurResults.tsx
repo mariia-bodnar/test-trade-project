@@ -7,26 +7,26 @@ export const OurResults = () => {
   return (
     <section>
       <S.Wrapper className="container">
-        <S.Table className="tableStyles w-35">
-          <img
-            className="transform"
-            src={Element}
-            alt="background math calculations"
-          />
-          <img
-            className="mobilePic"
-            src={elemMobile}
-            alt="background math calculations"
-          />
-          <div className="translate unicStls">
-            <div className="textPart ">
-              <h3>Spot & Margin</h3>
-              <h2>
-                Trade <span className="gradientAccent">200+</span> pairs with up
-                to 10x leverage
-              </h2>
-              <a href="#">Learn more</a>
-            </div>
+        <S.Table className="tableStyles w-35 ">
+          <div className="imageWrapper">
+            <img
+              className="transform"
+              src={Element}
+              alt="background math calculations"
+            />
+            <img
+              className="mobilePic"
+              src={elemMobile}
+              alt="background math calculations"
+            />
+          </div>
+          <div className=" unicStls">
+            <h3>Spot & Margin</h3>
+            <h2>
+              Trade <span className="gradientAccent">200+</span> pairs with up
+              to 10x leverage
+            </h2>
+            <a href="#">Learn more</a>
           </div>
         </S.Table>
         <div className="gridRows">
@@ -72,24 +72,27 @@ const S = {
     .w-35 {
       width: 35%;
       min-width: 35%;
+      display: flex;
+      flex-direction: column;
       @media (max-width: 990px) {
         width: 100%;
         display: flex;
         flex-direction: column-reverse;
         height: auto;
-        .translate {
-          margin-top: 0;
-        }
-        .transform {
-          display: none;
-        }
-        .mobilePic {
-          position: absolute;
-          top: -10%;
-          right: 0;
-          width: 100%;
-          @media (max-width: 576px) {
-            top: 25%;
+        .imageWrapper {
+          height: 160px;
+
+          .transform {
+            display: none;
+          }
+          .mobilePic {
+            position: absolute;
+            transform: translateY(-160px);
+            right: 0;
+            width: 100%;
+            @media (max-width: 576px) {
+              top: 25%;
+            }
           }
         }
       }
@@ -103,6 +106,8 @@ const S = {
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.35);
       border-radius: 46px;
       border: 2px solid #323437;
+      cursor: url(https://cdn.custom-cursor.com/db/9645/32/milky-way-pointer.png),
+        pointer !important;
     }
     .hrzWay {
       display: flex;
@@ -135,7 +140,6 @@ const S = {
   Table: styled.div`
     overflow: hidden;
     position: relative;
-    max-height: 747px;
     background: linear-gradient(
       315deg,
       hsl(60deg 2% 12%) 0%,
@@ -146,12 +150,27 @@ const S = {
       hsl(60deg 2% 12%) 83%,
       hsl(60deg 2% 18%) 100%
     );
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition:all ease-in-out 0.4s ;
+    :hover .textPart  {
+      transform: translateZ(12px);
+      transition: 300ms;
+    }
+    :hover  .unicStls{
+      transform: translateZ(12px);
+      transition: 300ms;
+    }
+    :hover {
+      
+    }
     img {
       width: 104%;
       object-fit: contain;
       z-index: 0;
     }
-    .textPart {
+    .textPart,
+    .unicStls {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -183,35 +202,29 @@ const S = {
       }
     }
     .unicStls {
-      height: fit-content;
+      height: 70% !important;
       box-sizing: content-box;
       z-index: 5;
       h2 {
         max-width: 308px;
       }
-      .textPart {
-        height: fit-content;
-        gap: 90px;
-        @media (min-width: 1600px) {
-          gap: 70px;
-        }
-        @media (max-width: 990px) {
-          gap: 25px;
-          padding: 40px;
-        }
-        @media (max-width: 576px) {
-          padding: 25px;
-          height: fit-content;
-        }
+      /* gap: 90px; */
+
+      @media (max-width: 990px) {
+        padding: 40px;
       }
+      @media (max-width: 576px) {
+        padding: 25px;
+      }
+    }
+    .imageWrapper {
+      height: 30%;
+      max-height: 30%;
+      position: relative;
     }
     .transform {
       position: absolute;
-      transform: translate3d(-16px, -16%, 0px);
-    }
-    .translate {
-      margin-top: 56%;
-      height: 378px;
+      transform: translateY(-25%);
     }
     .diffSize {
       width: 50%;

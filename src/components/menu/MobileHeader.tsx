@@ -94,7 +94,7 @@ const S = {
       p.$isActive
         ? css`
             & {
-              cursor: pointer;
+             cursor: url(https://cdn.custom-cursor.com/db/9017/32/starter-pixel-ice-pointer.png) , pointer!important;
               gap: 0;
             }
             span:first-child {
@@ -163,7 +163,7 @@ const S = {
       span {
         background-color: var(--accent-fill);
       }
-      cursor: pointer;
+     cursor: url(https://cdn.custom-cursor.com/db/9017/32/starter-pixel-ice-pointer.png) , pointer!important;
     }
   `,
   List: styled.ul<{ $isActive?: boolean }>`

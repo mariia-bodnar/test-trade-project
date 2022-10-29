@@ -76,7 +76,7 @@ const S = {
       background: url(shape.svg) center no-repeat;
     }
     &:hover {
-      cursor: pointer;
+      cursor: url(https://cdn.custom-cursor.com/db/9017/32/starter-pixel-ice-pointer.png) , pointer!important;
       & span {
         transform: translate3d(4px, -4px, 0);
         transition: all 0.48s ease-in-out;
