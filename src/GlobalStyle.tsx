@@ -28,6 +28,7 @@ body{
   height: 100%;
   padding-bottom: 100px;
   overflow: hidden;
+  background: radial-gradient( farthest-side at bottom left, rgb(87 87 87 / 61%), #00000000 200px ),radial-gradient( farthest-side at top left, rgb(87 87 87 / 30%), #00000000 200px );
   @media (max-width: 767px) {
    padding-bottom : 50px;
   }

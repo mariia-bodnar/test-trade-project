@@ -31,7 +31,7 @@ export const OurResults = () => {
         </S.Table>
         <div className="gridRows">
           <div className="gridCols">
-            <S.Table className="tableStyles">
+            <S.Table className="tableStyles first">
               <div className="textPart ">
                 <h3>Derivatives</h3>
                 <h2>40+ quarterly futures and contracts</h2>
@@ -64,6 +64,7 @@ const S = {
     display: flex;
     gap: 22px;
     max-height: 757px;
+    perspective: 1000px;
     @media (max-width: 990px) {
       display: flex;
       flex-direction: column;
@@ -115,6 +116,9 @@ const S = {
         padding-bottom: 89px;
         height: fit-content;
       }
+      &:hover {
+        transform: perspective(800px) rotateY(-2deg) !important;
+      }
     }
     .gridRows {
       width: calc(65% -22px);
@@ -134,6 +138,10 @@ const S = {
           display: flex;
           flex-direction: column;
         }
+        .first:hover {
+            transform: perspective(800px) rotateY(-2deg) !important;
+          
+        }
       }
     }
   `,
@@ -150,19 +158,27 @@ const S = {
       hsl(60deg 2% 12%) 83%,
       hsl(60deg 2% 18%) 100%
     );
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    transition:all ease-in-out 0.4s ;
-    :hover .textPart  {
+    /* transform:  rotateY(-1deg); */
+    transition: transform 1s ease 0s;
+    /* border-radius: 4px; */
+    box-shadow: rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+      rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+
+    &:hover {
+      transform: perspective(500px) rotateY(2deg);
+    }
+    /* transition: all ease-in-out 0.4s; */
+    :hover .textPart {
       transform: translateZ(12px);
       transition: 300ms;
     }
-    :hover  .unicStls{
+    :hover .unicStls {
       transform: translateZ(12px);
       transition: 300ms;
     }
     :hover {
-      
+      transform-style: preserve-3d;
     }
     img {
       width: 104%;
