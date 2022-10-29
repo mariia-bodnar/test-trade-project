@@ -59,7 +59,7 @@ const S = {
       p.$isActive
         ? css`
             animation: "toggleSlide" 0.6s;
-            transition: all 1s;
+            transition: all 0.2s;
             margin-bottom: 100px;
           `
         : css`
@@ -104,7 +104,7 @@ const S = {
             }
             span:last-child {
               animation: "rotateLeft" 0.4s;
-              transform: rotate(-45deg);
+              transform: rotate(-45deg) translate3d(1.2px, -0.5px, 0px);
               background-color: var(--accent-fill);
             }
           `
@@ -136,7 +136,7 @@ const S = {
         transform: rotate(0deg);
       }
       100% {
-        transform: rotate(-45deg);
+        transform: rotate(-45deg) translate3d(1.2px, -0.5px, 0px)
       }
     }
     @keyframes rotateLeftBack {
