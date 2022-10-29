@@ -47,6 +47,8 @@ const S = {
     width: 100%;
     position: absolute;
     z-index: -1;
+    object-fit: cover;
+    height: 100%;
     @media (max-width: 767px) {
       display: none;
     }

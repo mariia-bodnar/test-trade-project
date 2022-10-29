@@ -196,6 +196,9 @@ const S = {
       z-index: 2;
       a {
         color: #aaaaaa;
+        :hover {
+          color: var(--accent-fill);
+        }
       }
       h2 {
         @media (max-width: 1300px) {
